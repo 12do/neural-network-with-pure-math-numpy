@@ -108,15 +108,10 @@ img = Image.open(image_path).convert('L').resize((28, 28))
 # 3. Normalize
 img_matrix = np.array(img) / 255.0
 
-
-X = img_matrix.reshape(img_matrix.shape[0]*img_matrix.shape[1]).astype('float32')
 X = img_matrix.reshape(784, 1).astype('float32')
-Y = np.zeros((10, 1))         # Shape: (10, 1)
-Y[9] = 1.0
-a = 0.1
 
 # Trained weights and bias
-saved_model = np.load("model_so9.npz")
+saved_model = np.load("model.npz")
 
 W1 = saved_model['W1']
 b1 = saved_model['b1']
