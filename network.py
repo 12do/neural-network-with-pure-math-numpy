@@ -78,10 +78,10 @@ for epoch in range(20):
 
     predictions = np.argmax(A3_t, axis=0)
     accuracy = np.mean(predictions == test_labels) * 100
-    print(f"Epoch {epoch+1:2d}/{100} | Độ chính xác tập test: {accuracy:.2f}%")
+    print(f"Epoch {epoch+1:2d}/{100} | Accuracy: {accuracy:.2f}%")
 
-# 4. Save weights and biaas
+# 4. Save weights and bias
 np.savez("model_mnist_full.npz", W1=W1, b1=b1, W2=W2, b2=b2, W3=W3, b3=b3)
-print("\n--> Hoàn tất! Đã lưu mô hình vào file 'model_mnist_full.npz'")
+print("Saved weights and bias to 'model.npz'")
 
 
