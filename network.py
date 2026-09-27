@@ -26,7 +26,6 @@ def softmax(Z):
     return exp_Z / np.sum(exp_Z, axis=0, keepdims=True)
 
 #Network
-
 for epoch in range(20):
 
     permutation = np.random.permutation(X_train.shape[1])
@@ -68,7 +67,6 @@ for epoch in range(20):
       iteration += 128
 
 #Test/Forward Pass test
-
     Z1_t = np.dot(W1, X_test) + b1
     A1_t = relu(Z1_t)
     Z2_t = np.dot(W2, A1_t) + b2
