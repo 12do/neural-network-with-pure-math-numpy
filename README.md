@@ -91,8 +91,13 @@ Create a file named `test.py` in your project root directory and paste the follo
 import numpy as np
 from PIL import Image
 
-def sigmoid(z):
-    return 1 / (1 + np.exp(-z))
+def relu(Z):
+  return np.maximum(0, Z)
+
+
+def softmax(Z):
+  exp_Z = np.exp(Z - np.max(Z, axis=0, keepdims=True))
+  return exp_Z / np.sum(exp_Z, axis=0, keepdims=True)
 
 # Flatten image
 image_path = "./sample_image/number9.png"
@@ -122,14 +127,13 @@ b3 = saved_model['b3']
 
 # Forward Pass 
 Z1 = np.dot(W1, X) + b1
-A1 = sigmoid(Z1)
+A1 = relu(Z1)
 
 Z2 = np.dot(W2, A1) + b2
-A2 = sigmoid(Z2)
+A2 = relu(Z2)
 
 Z3 = np.dot(W3, A2) + b3
-exp_z3 = np.exp(Z3 - np.max(Z3))
-output = exp_z3 / np.sum(exp_z3)
+output = softmax(Z3)
 
 prediction = np.argmax(output, axis=0)[0]
 
