@@ -19,7 +19,7 @@ The model achieves **~97% test accuracy** on the raw MNIST dataset in 20 epochs.
 
 ---
 
-## 📐 Architecture & Mathematical Formulation
+## Architecture & Mathematical Formulation
 
 The network consists of 4 layers ($784 \rightarrow 128 \rightarrow 64 \rightarrow 10$):
 
@@ -73,7 +73,7 @@ $$
 
 ---
 
-## ▶️ Test it by yourself
+## Test it by yourself
 
 You can evaluate the trained model on custom handwritten digits (e.g., photos of hand-written numbers or images drawn in Paint/Photoshop) without re-training the network.
 
