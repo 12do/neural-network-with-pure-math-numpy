@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+
+.vscode/
+.idea/
+*.venv
+venv/
+
+.DS_Store
+
+*.npz
+
+
